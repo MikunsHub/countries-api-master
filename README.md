@@ -20,8 +20,8 @@ This project implements a REST API using TypeScript and Node.js, integrating dat
 
 ### Prerequisites
 
-- Node.js (version 14 or higher)
-- npm (version 6 or higher)
+- Node.js (version 18 or higher)
+- npm (version 10.x)
 
 ### Installation
 
