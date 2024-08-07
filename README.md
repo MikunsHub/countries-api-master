@@ -140,6 +140,19 @@ The deployed API can be accessed at the following URL:
 
 By following these steps, deployments can be managed efficiently and database migrations effectively on Render, even with the limitations of the free instance.
 
+### Continuous Integration
+
+I implemented a CI pipeline using GitHub Actions to ensure code quality and security. The pipeline automatically runs on every push to the main branch( not that this is encouraged) and for all pull requests targeting the main branch.
+
+#### CI Pipeline Features:
+
+1. **Automated Testing**: Runs the entire test suite to catch any regressions or bugs.
+
+2. **Security Scanning**:
+   - **npm audit**: I use `npm audit` to scan the dependencies for known vulnerabilities. The pipeline will fail if any moderate or higher severity vulnerabilities are detected.
+   - **Snyk Integration**: I incorporated Snyk for more comprehensive vulnerability scanning. Snyk provides detailed reports on potential security issues in both our code and dependencies.
+
+
 ### Potential Improvements
 - Authentication Process: Implement a more robust authentication mechanism to enhance the security of the API.
 - Additional Endpoints: Add more endpoints to provide additional insights and value from the ingested data
