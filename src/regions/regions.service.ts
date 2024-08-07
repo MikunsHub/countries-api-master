@@ -1,10 +1,9 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Country } from 'src/core/entities/countries.entity';
-import { Region } from 'src/core/entities/regions.entity';
+import { Region } from '../core/entities/regions.entity';
 import { FetchRegionsDto } from './dto/fetch-regions.dto';
-import { UtilityService } from 'src/utility/utility.service';
+import { UtilityService } from '../utility/utility.service';
 
 @Injectable()
 export class RegionsService {

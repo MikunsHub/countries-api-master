@@ -1,5 +1,5 @@
 import { randomBytes } from 'crypto';
-import { ApiBaseResponse, ApiResponsePaginated } from 'src/core/interfaces/api-response.interface';
+import { ApiBaseResponse, ApiResponsePaginated } from '../core/interfaces/api-response.interface';
 
 const generateRandomString = (length: number): string => {
   return randomBytes(length).toString('hex');

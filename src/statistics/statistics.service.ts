@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Country } from 'src/core/entities/countries.entity';
-import { createApiResponsePaginated } from 'src/utility/utility.core';
+import { Country } from '../core/entities/countries.entity';
+import { createApiResponsePaginated } from '../utility/utility.core';
 
 // Define CountryData type to reflect the correct structure
 interface CountryData {

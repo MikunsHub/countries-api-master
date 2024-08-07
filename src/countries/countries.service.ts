@@ -1,15 +1,11 @@
 import {
   Injectable,
   Logger,
-  InternalServerErrorException,
   NotFoundException,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { In, Repository } from 'typeorm';
-import { CreateCountryDto } from './dto/create-country.dto';
-import { RegionsService } from '../regions/regions.service';
-import axios from 'axios';
-import { Country } from 'src/core/entities/countries.entity';
+import { Country } from '../core/entities/countries.entity';
 import { FetchCountriesDto } from './dto/fetch-countries.dto';
 import { FetchCountryDto } from './dto/fetch-country.dto';
 
@@ -20,7 +16,6 @@ export class CountryService {
   constructor(
     @InjectRepository(Country)
     private readonly countriesRepository: Repository<Country>,
-    private readonly regionsService: RegionsService,
   ) {}
 
   async getCountries(

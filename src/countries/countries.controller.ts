@@ -7,9 +7,9 @@ import {
 } from '@nestjs/swagger';
 import { AuthGuard } from '@nestjs/passport';
 import { CountryService } from './countries.service';
-import { ApiResponsePaginated } from 'src/core/interfaces/api-response.interface';
-import { createApiResponsePaginated } from 'src/utility/utility.core';
-import { Country } from 'src/core/entities/countries.entity';
+import { ApiResponsePaginated } from '../core/interfaces/api-response.interface';
+import { createApiResponsePaginated } from '../utility/utility.core';
+import { Country } from '../core/entities/countries.entity';
 import { FetchCountriesDto } from './dto/fetch-countries.dto';
 import { FetchCountryDto } from './dto/fetch-country.dto';
 
