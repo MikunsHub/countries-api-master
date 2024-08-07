@@ -1,73 +1,66 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Countries API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Overview
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This project implements a REST API using TypeScript and Node.js, integrating data from the REST Countries API. The API provides various endpoints to retrieve and process country data, including details on regions, languages, and aggregated statistics.
 
-## Description
+## Features
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+- **Data Integration:** Fetches and processes data from the REST Countries API.
+- **API Endpoints:**
+  - `GET /api/countries`: Retrieve a list of countries with pagination and optional filtering by region or population size.
+  - `GET /api/countries/:id`: Retrieve detailed information for a specific country, including its languages, population, area, and bordering countries.
+  - `GET /api/regions`: Retrieve a list of regions and the countries within each region, with additional aggregated data such as the total population of the region.
+  - `GET /api/languages`: Retrieve a list of languages and the countries where they are spoken. Include the total number of speakers globally for each language.
+  - `GET /api/statistics`: Provide aggregated statistics such as the total number of countries, the largest country by area, the smallest by population, and the most widely spoken language.
+- **Data Processing:** Efficiently stores and manages fetched data, with features for filtering, searching, and sorting.
+- **Security:** Protects the API against common web vulnerabilities.
+- **Performance:** Implements caching strategies to enhance performance and handle concurrent requests efficiently.
+- **Documentation:** Comprehensive API documentation using Swagger/OpenAPI.
+- **Additional Features:** Logging for tracking API usage and debugging, along with unit and integration tests for the API endpoints.
 
-## Installation
+## Setup
 
-```bash
-$ npm install
-```
+### Prerequisites
 
-## Running the app
+- Node.js (version 14 or higher)
+- npm (version 6 or higher)
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+git clone https://github.com/MikunsHub/countries-api-master.git
+cd countries-api-master
 ```
 
-## Test
-
+2. Install dependencies:
 ```bash
-# unit tests
-$ npm run test
+npm install
+```
+3. Set up environment variables
+```bash
+NODE_ENV=
+PORT=
+ALLOWED_ORIGINS=
 
-# e2e tests
-$ npm run test:e2e
+DATABASE_HOST=
+DATABASE_PORT=
+DATABASE_USER=
+DATABASE_PASSWORD=
+DATABASE_NAME=
+DATABASE_SSL=
 
-# test coverage
-$ npm run test:cov
+JWT_SECRET=your_jwt_secret_here
+
+REDIS_HOST=
+REDIS_PORT=
+REDIS_PASSWORD=
 ```
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Running the 
+Start up the docker container, to have access to a Postgres and Redis instance
+```bash
+docker-compose -f docker-compose.yml up -d
+```
